@@ -9,13 +9,7 @@
       <instructions />
       <v-tooltip left>
         <template v-slot:activator="{ on, attrs }">
-          <v-btn
-            icon
-            class="mx-2"
-            href="https://github.com/msramalho/desarquivo"
-            v-bind="attrs"
-            v-on="on"
-          >
+          <v-btn icon class="mx-2" href="https://github.com/desarquivo" v-bind="attrs" v-on="on">
             <v-icon large>mdi-github</v-icon>
           </v-btn>
         </template>
@@ -79,7 +73,7 @@ export default {
   components: { Instructions, Examples, Logo },
   data() {
     return {
-      lang: this.$cookies.get("app-lang") || this.$store.state.locale || "pt"
+      lang: this.$cookies.get("app-lang") || this.$store.state.locale || "pt",
     };
   },
   mounted() {
@@ -95,7 +89,7 @@ export default {
       this.$store.commit("SET_LANG", this.lang);
       this.$cookies.set("app-lang", this.lang);
       this.$i18n.locale = this.lang;
-    }
-  }
+    },
+  },
 };
 </script>
